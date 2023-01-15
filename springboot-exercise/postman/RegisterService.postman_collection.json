@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "af98044c-9a12-467d-8222-d66ded359bec",
+		"name": "CustomCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getRequestApi",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"5a35f18f-37ed-4749-9188-41e1e3a3e237\",\r\n    \"referalCode\": 123,\r\n    \"landingPage\": \"land\",\r\n    \"userAgent\": \"userA\",\r\n    \"ip\": \"ip\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8181/register/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"register",
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequestApiConversion",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"{{$guid}}\",\r\n    \"totalPrice\": 1.1,\r\n    \"clientId\": \"5a35f18f-37ed-4749-9188-41e1e3a3e237\",\r\n    \"transactionType\": \"NEW\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8181/register/conversion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"register",
+						"conversion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
